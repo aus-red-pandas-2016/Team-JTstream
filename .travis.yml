@@ -1,8 +1,8 @@
 language: ruby
 rvm:
- - 2.2
- - jruby
- - rbx-2
+- 2.2
+- jruby
+- rbx-2
  
- notifications:
-  slack: dbc-atx:QRGX6328W7YbJVBhpTHRZm7i
+notifications:
+ slack: dbc-atx:QRGX6328W7YbJVBhpTHRZm7i
