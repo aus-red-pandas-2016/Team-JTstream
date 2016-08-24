@@ -6,7 +6,7 @@
 
 - Jess Bohn - jessbohn
 - Tom Ho - TomHoDev
-- TJ Oyeniyi - TJOye20
+- TJ Oyeniyi - tjoye20
 - Jay Pelletier - lukin41280
 
 ### Project Description
