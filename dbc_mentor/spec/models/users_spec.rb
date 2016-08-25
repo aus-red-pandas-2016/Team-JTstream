@@ -6,6 +6,9 @@ describe "user model" do
   let(:mentor) { User.last }
   let(:saved_user) { User.find_by(name:"jay") }
 
+  let(:user2) { User.create!(name:"jess", email:"jess@gmail.com", password: "1234", type: "Mentor") }
+  let(:saved_user2) { User.find_by(name:"jess") }
+
   it "has a name" do
     expect(user.name).to eq saved_user.name
   end
@@ -27,7 +30,8 @@ describe "user model" do
   end
 
   it "can find a mentor user" do
-    expect(User.find_by(type: "Mentor")).to eq mentor
+    expect(User.find_by(type: "Mentor")).to eq saved_user2
   end
 
 end
+

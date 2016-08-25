@@ -25,6 +25,7 @@
       ],
       "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/application_controller.rb": [
         1,
+        null,
         1,
         null,
         1,
@@ -66,6 +67,7 @@
         1,
         null,
         null,
+        1,
         1,
         2,
         null,
@@ -122,6 +124,31 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        10,
+        10,
+        10,
+        4,
+        4,
+        4,
+        null,
+        6,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        6,
+        6,
+        6,
+        6,
+        null,
+        null,
         null,
         null,
         null
@@ -139,8 +166,13 @@
         null,
         null,
         null
+      ],
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/student.rb": [
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1472165160
+    "timestamp": 1472168104
   }
 }

@@ -32,7 +32,6 @@ gem 'simplecov'
 gem 'factory_girl'
 gem 'rails-controller-testing'
 
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
