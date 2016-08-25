@@ -30,6 +30,7 @@ gem 'rspec-rails'
 gem 'capybara'
 gem 'simplecov'
 gem 'factory_girl'
+gem 'rails-controller-testing'
 
 
 # Use Capistrano for deployment
@@ -37,6 +38,8 @@ gem 'factory_girl'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
+  gem 'database_cleaner'
   gem 'byebug', platform: :mri
 end
 

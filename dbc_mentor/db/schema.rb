@@ -15,12 +15,14 @@ ActiveRecord::Schema.define(version: 20160825194907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "mentors", force: :cascade do |t|
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.string   "type"
-    t.integer  "type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
