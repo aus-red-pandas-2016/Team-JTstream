@@ -5,6 +5,35 @@
         1,
         null
       ],
+      "/Users/tomho/Team-JTstream/dbc_mentor/spec/models/users_spec.rb": [
+        1,
+        null,
+        1,
+        5,
+        6,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/tomho/Team-JTstream/dbc_mentor/app/models/user.rb": [
         1,
         null,
@@ -21,6 +50,6 @@
         null
       ]
     },
-    "timestamp": 1472142993
+    "timestamp": 1472145685
   }
 }
