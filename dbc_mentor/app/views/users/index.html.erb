@@ -1,0 +1,8 @@
+<% if @user.type == "Student" %>
+you made it to the index page as a student 
+<% elsif @user.type == "Mentor" %>
+you made it to the index page as a mentor
+<% else %>
+you made it here without a proper user
+<% end %><br\>
+<%= flash[:notice] %>

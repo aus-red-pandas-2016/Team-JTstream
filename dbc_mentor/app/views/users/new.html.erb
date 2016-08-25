@@ -1,6 +1,6 @@
 <h3>Register</h3>
 
-<%= form_for @user create_user_path do |f| %>
+<%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 	    <div class="error_messages">
 	      <h2>Form is invalid</h2>
@@ -13,16 +13,18 @@
   	<% end %>
 
 	<p>
+	<input name="authenticity_token" type="hidden" value="token_value">
 	    <%= f.label :name %><br />
 	    <%= f.text_field :name %>
   	</p>
+
   	<p>
 	    Are you registering as a student or a mentor?<br />
-	    <%= select_tag(:type, options_for_select([['', 1], ['Student', 2], ['Mentor', 3]])) %>
+	    <%= select_tag(:type, options_for_select([[''], ['Student'], ['Mentor']])) %>
   	</p>
   	<p>
 	    If you are registering as a mentor, please enter your provided access code<br />
-	    <input type="text" name="mentor_code">
+	    <input type="text" name="mentor_code"> <%= flash[:alert] %>
   	</p>
   	<p>
 	    What topics are you well versed in? (optional)<br />
@@ -42,7 +44,7 @@
   	</p>
   	<p>
 	    <%= f.label :password_confirmation %><br />
-	    <%= f.password_field :password_confirmation %>
+	    <%= f.password_field :password_confirmation %><%= flash[:alert] %>
   	</p>
  	<p class="button"><%= f.submit "Finalize Registration"%></p>
 <% end %>
