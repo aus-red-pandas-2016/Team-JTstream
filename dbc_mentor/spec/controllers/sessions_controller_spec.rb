@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SessionsController do
-  let!(:user) {User.create(name: "tj", email: "test@test.com", user_type: "Mentor", password: "password")}
+  let!(:user) {User.create(name: "tj", email: "test@test.com", type: "Mentor", password: "password")}
 
   context "when valid params are passed" do
     let :params do
