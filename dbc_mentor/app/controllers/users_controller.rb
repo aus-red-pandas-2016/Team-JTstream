@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 					return render "new"
 				end
 			end
-			@user = User.create!(name: params[:user][:name], email: params[:user][:email], password: password, phone: params[:user][:phone], type: params[:user][:type], topics: params[:user][:topics])
+			@user = User.create!(name: params[:user][:name], email: params[:user][:email], password: password, phone: params[:user][:phone], type: params[:type], topics: params[:user][:topics])
       session[:id] = @user.id
 			flash[:notice] = "User was successfully created."
 			redirect_to root_path

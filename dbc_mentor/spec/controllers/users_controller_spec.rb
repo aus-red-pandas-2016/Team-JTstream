@@ -23,32 +23,32 @@ describe UsersController do
   describe "POST #create" do
     context "when valid params are passed" do
       it "responds with status code 302" do
-        post :create, { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect(response).to have_http_status 302
       end
 
       it "creates a new user in the database" do
-        params = { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        params = { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect{ post :create, params }.to change(User,:count).by(1)
       end
 
       it "assigns the newly created student as @student" do
-        post :create, { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect(assigns(:user)).to eq(User.last)
       end
 
       it "sets a notice that the user was successfully created" do
-        post :create, { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect(flash[:notice]).to eq('User was successfully created.')
       end
 
       it "logins the new registered user" do
-        post :create, { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect(session[:id]).to eq User.last.id
       end
 
       it "redirects to the home page" do
-        post :create, { user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password", type: "Student"} }
+        post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
         expect(response).to redirect_to "/"
       end
     end
