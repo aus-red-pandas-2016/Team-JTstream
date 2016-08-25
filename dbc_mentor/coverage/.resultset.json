@@ -34,7 +34,15 @@
         null,
         null
       ],
+      "/Users/tomho/Team-JTstream/dbc_mentor/app/models/appointment.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/tomho/Team-JTstream/dbc_mentor/app/models/user.rb": [
+        1,
         1,
         null,
         1,
@@ -50,6 +58,6 @@
         null
       ]
     },
-    "timestamp": 1472145685
+    "timestamp": 1472155151
   }
 }
