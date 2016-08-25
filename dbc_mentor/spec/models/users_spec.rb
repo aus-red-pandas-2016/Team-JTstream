@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "user model" do
   let(:user) { User.create!(name:"jay", email:"jay@gmail.com", password: "1234", type: "Student") }
+  let(:user2) { User.create!(name:"jess", email:"jess@gmail.com", password: "password", type: "Mentor") }
+  let(:mentor) { User.last }
   let(:saved_user) { User.find_by(name:"jay") }
 
   let(:user2) { User.create!(name:"jess", email:"jess@gmail.com", password: "1234", type: "Mentor") }
@@ -32,3 +34,4 @@ describe "user model" do
   end
 
 end
+

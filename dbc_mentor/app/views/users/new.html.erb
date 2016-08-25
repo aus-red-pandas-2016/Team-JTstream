@@ -24,7 +24,7 @@
   	</p>
   	<p>
 	    If you are registering as a mentor, please enter your provided access code<br />
-	    <input type="text" name="mentor_code"> <%= flash[:alert] %>
+	    <input type="text" name="mentor_code"> <%= flash[:alert_mentor] %>
   	</p>
   	<p>
 	    What topics are you well versed in? (optional)<br />
@@ -44,7 +44,7 @@
   	</p>
   	<p>
 	    <%= f.label :password_confirmation %><br />
-	    <%= f.password_field :password_confirmation %><%= flash[:alert] %>
+	    <%= f.password_field :password_confirmation %><%= flash[:alert_password] %>
   	</p>
  	<p class="button"><%= f.submit "Finalize Registration"%></p>
 <% end %>
