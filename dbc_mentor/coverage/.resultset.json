@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tomho/Team-JTstream/dbc_mentor/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tomho/Team-JTstream/dbc_mentor/app/models/user.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tomho/Team-JTstream/dbc_mentor/app/models/student.rb": [
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1472142993
+  }
+}
