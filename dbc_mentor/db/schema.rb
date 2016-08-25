@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20160825172235) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "phone"
-    t.string   "type"
-    t.integer  "type_id"
+    t.string   "user_type"
+    t.integer  "user_type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
