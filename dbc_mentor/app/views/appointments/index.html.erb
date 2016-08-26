@@ -1,14 +1,14 @@
 <h2>Available Appointments</h2>
 <% if session[:id] %>
-<%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get%>
+<%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get, class: 'button-primary'%>
 <% end %>
 <div class="appointments">
   <% if @appointments.length == 0 %>
-    <h3>There are no available appointments</h3>    
+    <h3>There are no available appointments</h3>
   <% else %>
     <% @dates.each do |date| %>
       <h3><u><%= date.strftime('%m-%d-%y') %></u></h3>
-    
+
 
        <% apts_on_date = @appointments.select do |apt| %>
         <% apt.datetime.to_date == date %>
@@ -22,15 +22,17 @@
           <% end %>
 
           <% apts_at_time.each do |apt| %>
-            <% if apt.user.type == "Student" %>
-            -   <%= apt.user.name %> (student):  
-            <% else %>
-            -   <%= apt.user.name %>:  
-            <% end %> 
-            <%= apt.user.topics %>     <%= link_to "sign up", user_appointment_path(user_id: apt.user_id, id: apt.id) %><br>
+            <ul>
+              <% if apt.user.type == "Student" %>
+                <li><%= apt.user.name %> (student):
+              <% else %>
+                <li><%= apt.user.name %>:
+              <% end %>
+              <%= apt.user.topics %>     <%= link_to "sign up", user_appointment_path(user_id: apt.user_id, id: apt.id) %></li>
+            </ul>
           <% end %>
         <% end %> <br>
 
-    <% end %> 
+    <% end %>
   <% end %>
 </div>

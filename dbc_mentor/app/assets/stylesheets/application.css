@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+}
+
+html {
+  width: 960px;
+  display: table;
+  margin: auto;
+}
+
+body{
+  width: 80%;
+  display: table-cell;
+}
+
+.nav {
+  margin: 5px;
+}
+
+#nav-home {
+  float: left;
+  margin: 0px 5px 5px 5px;
+}
+
+#nav-user {
+  /*float: right;*/
+  margin: 0px 5px 5px 5px;
+}
+
+#nav-logout {
+  margin: 0px 5px 5px 5px;
+}
+
+.optional {
+  display: inline-block;
+}
+
+.phone {
+  display: inline-block;
+}
+
+.columns {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 500px;
+  overflow: scroll;
+}
+
+.columns h3 {
+  font-size: 2em;
+}

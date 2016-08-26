@@ -10,68 +10,78 @@
   <% end %>
 </div><br>
 
+<div class='row'>
+  <% if @user.type == "Student" %>
+    <div class="four columns">
+      <h3>Appointments</h3>
 
-<% if @user.type == "Student" %>
-  <h3>Your Appointments</h3>
- <% if Appointment.where(student_id: @user.id).length > 0 %>
-    <% Appointment.where(student_id: @user.id).each do |appointment| %>
-      Mentor: <%= appointment.user.name %><br>
-      Contact Info: <%= appointment.user.email %><br>
-      Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
-      Appointment Context: <br>
-      <%= appointment.context %><br>
-      <%= link_to "Edit Appointment",  edit_user_appointment_path(user_id: appointment.user_id, id: appointment.id)%><br>
-      <%= link_to "Add Feedback", new_feedback_path(mentor_id: appointment.user.id, student_id: current_user.id, appointment_id: appointment.id) %><br><br>
-    <% end %>
-  <% else %>
-    <p>You do not have any appointments currently</p>
-  <% end %>
-<% end %>
+      <% if Appointment.where(student_id: @user.id).length > 0 %>
+        <% Appointment.where(student_id: @user.id).each do |appointment| %>
+          <b>Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %></b><br>
+          Mentor: <%= appointment.user.name %><br>
+          Contact Info: <%= appointment.user.email %><br><br>
 
-<h3>Your Mentoring Sessions</h3>
-  <%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get%><br>
-  <% if Appointment.where(user_id: @user.id).length > 0 %>
-    <% Appointment.where(user_id: @user.id).each do |appointment| %>
-      <% if appointment.student_id %>
-        Student: <%= User.find(appointment.student_id).name %><br>
-        Contact Info: <%= User.find(appointment.student_id).email %><br>
+          Appointment Context: <br>
+          <%= appointment.context %><br>
+          <%= link_to "Edit Appointment",  edit_user_appointment_path(user_id: appointment.user_id, id: appointment.id)%><br>
+          <%= link_to "Add Feedback", new_feedback_path(mentor_id: appointment.user.id, student_id: current_user.id, appointment_id: appointment.id) %><br><br>
+        <% end %>
       <% else %>
-        Student: No student signed up yet<br>
+        <p>You do not have any appointments currently</p>
       <% end %>
-      Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
-      Appointment Context: <br>
-      <%= appointment.context %><br>
-      <%=  link_to "Cancel Appointment", "/users/#{appointment.user_id}/appointments/#{appointment.id}", method: "delete", data: {confirm: "Are you sure?"} %><br>
-      <%= link_to "Add Feedback", new_feedback_path(mentor_id: current_user.id, student_id: appointment.student_id, appointment_id: appointment.id) %><br><br>
+      </div>
     <% end %>
-  <% else %>
-    <p>You do not have any mentoring sessions currently</p>
-  <% end %>
+  <div class="four columns">
+    <h3>Mentoring Sessions</h3>
+      <%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get, class: 'button-primary'%><br>
+      <% if Appointment.where(user_id: @user.id).length > 0 %>
+        <% Appointment.where(user_id: @user.id).each do |appointment| %>
+          <b>Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %></b><br>
+          <% if appointment.student_id %>
+            Student: <%= User.find(appointment.student_id).name %><br>
+            Contact Info: <%= User.find(appointment.student_id).email %><br>
+          <% else %>
+            Student: No student signed up yet<br>
+          <% end %>
 
-<h3>Feedback</h3>
+          Appointment Context: <br>
+          <%= appointment.context %><br>
+          <%=  link_to "Cancel Appointment", "/users/#{appointment.user_id}/appointments/#{appointment.id}", method: "delete", data: {confirm: "Are you sure?"} %><br>
+          <%= link_to "Add Feedback", new_feedback_path(mentor_id: current_user.id, student_id: appointment.student_id, appointment_id: appointment.id) %><br><br>
+        <% end %>
+      <% else %>
+        <p>You do not have any mentoring sessions currently</p>
+      <% end %>
+  </div>
 
-<% if @user.type == "Student" %>
-  <% all_feedback = Feedback.where(student_id: @user.id) %>
-<% else %>
-  <% all_feedback = Feedback.where(mentor_id: @user.id) %>
-<% end %>
+  <div class="four columns">
+    <h3>Feedback</h3>
 
-<% if all_feedback.length > 0 %>
-
-  <% all_feedback.each do |f| %>
-    <p>Rating: <%= f.rating %></p>
-    <p>Content:
-    <br><%= f.content %></p>
     <% if @user.type == "Student" %>
-      Feedback by: <%= User.find(f.mentor_id).name %>
+      <% all_feedback = Feedback.where(student_id: @user.id) %>
     <% else %>
-      Feedback by: <%= User.find(f.student_id).name %>
+      <% all_feedback = Feedback.where(mentor_id: @user.id) %>
     <% end %>
-    <%=  link_to "Delete Feedback", "/feedbacks/#{f.id}", method: "delete", data: {confirm: "Are you sure?"} %><br>
-  <% end %>
-<% else %>
-  <p>You do not have any feedback currently</p>
-<% end %>
+
+    <% if all_feedback.length > 0 %>
+
+      <% all_feedback.each do |f| %>
+        <p>Rating: <%= f.rating %></p>
+        <p>Content:
+        <br><%= f.content %></p>
+        <% if @user.type == "Student" %>
+          Feedback by: <%= User.find(f.mentor_id).name %>
+        <% else %>
+          Feedback by: <%= User.find(f.student_id).name %>
+        <% end %>
+        <%=  link_to "Delete Feedback", "/feedbacks/#{f.id}", method: "delete", data: {confirm: "Are you sure?"} %><br>
+      <% end %>
+    <% else %>
+      <p>You do not have any feedback currently</p>
+    <% end %>
+  </div>
+</div>
+
 
 
 
