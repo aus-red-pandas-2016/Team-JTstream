@@ -10,11 +10,13 @@
 
   <body>
       <div id="user_nav">
+        <%= link_to "Home", root_path %>
         <% if current_user %>
           Logged in as <%= current_user.email %>.
-          <%= link_to "Log out", log_out_path %>
+          <%= link_to "Log Out", log_out_path %>
         <% else %>
-          <%= link_to "log in", log_in_path %>
+          <%= link_to "Register", new_user_path %>
+          <%= link_to "Log In", log_in_path %>
         <% end %>
       </div>
 
