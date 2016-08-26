@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+}
+
+html {
+  width: 960px;
+  display: table;
+  margin: auto;
+}
+
+body{
+  width: 70%;
+  display: table-cell;
+}
+
+.nav {
+  margin: 5px;
+}
+
+#nav-home {
+  float: left;
+  margin: 0px 5px 5px 5px;
+}
+
+#nav-user {
+  /*float: right;*/
+  margin: 0px 5px 5px 5px;
+}
+
+#nav-logout {
+  margin: 0px 5px 5px 5px;
+}
+
+.optional {
+  display: inline-block;
+}
+
+.phone {
+  display: inline-block;
+}
