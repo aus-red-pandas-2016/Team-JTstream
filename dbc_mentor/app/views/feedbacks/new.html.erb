@@ -26,5 +26,8 @@
       <%= f.label :content %><br />
       <%= f.text_area :content %>
     </p>
+    <%= hidden_field_tag 'mentor_id', params[:mentor_id] %>
+    <%= hidden_field_tag 'student_id', params[:student_id] %>
+    <%= hidden_field_tag 'appointment_id', params[:appointment_id] %>
   <p class="button"><%= f.submit "Submit Feedback"%></p>
 <% end %>
