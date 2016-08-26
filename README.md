@@ -1,7 +1,7 @@
-# DBC Mentor App                                                                                          
+# DBC U-Soon                                                                                          
 
 ![Coverage Status](http://img.shields.io/coveralls/haml/haml.svg)
-[![Build Status](https://travis-ci.org/aus-red-pandas-2016/Team-JTstream.svg?branch=master)](https://travis-ci.org/aus-red-pandas-2016/Team-JTstream)
+
 ## Team-JTstream
 
 ### Team Members
@@ -32,3 +32,4 @@ Create and migrate your database
 
 ### How To Use
 
+Users must register first.  A user can register as a student or as a mentor.  Mentors must register with an access code that is given by the school.  Once logged in, a student can view available time slots set up by mentors and other students.  Clicking the sign up button will allow the student to type in a request of items they wish to cover in their mentor session.  When sign up is complete, the appointment availibility is no longer visable in the main page.  Students may also set up their own mentor sessions to aide other students in the learning process.  Once a session is complete, both students and mentors can provide feedback to one another on how the session went.  The receiver of the feedback will be able to view comments in their profile page
