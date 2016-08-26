@@ -15,12 +15,12 @@
 	<p>
 	<input name="authenticity_token" type="hidden" value="token_value">
 	    <%= f.label :name %><br />
-	    <%= f.text_field :name %>
+	    <%= f.text_field :name, :required => true%>
   	</p>
 
   	<p>
 	    Are you registering as a student or a mentor?<br />
-	    <%= select_tag(:type, options_for_select([[''], ['Student'], ['Mentor']])) %>
+	    <%= select_tag(:type, options_for_select([[''], ['Student'], ['Mentor']]), :required => true) %>
   	</p>
   	<p>
 	    If you are registering as a mentor, please enter your provided access code<br />
@@ -36,15 +36,15 @@
   	</p>
   	<p>
 	    Provide an email which will be used for Login and contact<br />
-	    <%= f.text_field :email %>
+	    <%= f.text_field :email, :required => true %>
   	</p>
   	<p>
 	    <%= f.label :password %><br />
-	    <%= f.password_field :password %>
+	    <%= f.password_field :password, :required => true %>
   	</p>
   	<p>
 	    <%= f.label :password_confirmation %><br />
-	    <%= f.password_field :password_confirmation %><%= flash[:alert_password] %>
+	    <%= f.password_field :password_confirmation, :required => true %><%= flash[:alert_password] %>
   	</p>
  	<p class="button"><%= f.submit "Finalize Registration"%></p>
 <% end %>
