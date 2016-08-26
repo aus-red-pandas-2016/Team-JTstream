@@ -12,9 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20160826032927) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "datetime",   null: false
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "context"
+    t.boolean  "active"
+  end
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "mentor_id"
@@ -27,16 +36,6 @@ ActiveRecord::Schema.define(version: 20160826032927) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "appointments", force: :cascade do |t|
-    t.datetime "datetime",   null: false
-    t.integer  "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.string   "context"
-    t.boolean  "active"
-  end
-
   create_table "mentors", force: :cascade do |t|
   end
 
@@ -45,7 +44,6 @@ ActiveRecord::Schema.define(version: 20160826032927) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "type"
-    t.integer  "type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
