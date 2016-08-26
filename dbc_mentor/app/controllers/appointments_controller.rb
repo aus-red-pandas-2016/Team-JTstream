@@ -36,10 +36,10 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    binding.pry
     @appointment = Appointment.find(params[:id])
     @appointment.context = params[:context]
     @appointment.student_id = session[:id]
+    mentor_email = Mentor.find_by(id: @appointment.user_id).email
     if params[:cancel]
       @appointment.student_id = nil
       @appointment.active = true
@@ -47,6 +47,8 @@ class AppointmentsController < ApplicationController
       @appointment.active = false
     end
     @appointment.save
+
+    UserMailer.new_appt_email(mentor_email).deliver_now 
     redirect_to show_appointments_path
 
   end
