@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825194907) do
+ActiveRecord::Schema.define(version: 20160826032225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "student_id"
+    t.integer  "appointment_id"
+    t.string   "written_by"
+    t.text     "content"
+    t.integer  "rating"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "mentors", force: :cascade do |t|
   end
@@ -23,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160825194907) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "type"
+    t.integer  "type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
