@@ -1,0 +1,18 @@
+<h3>Update Your Information</h3>
+<%= flash[:alert] %>
+<%= form_for @user, url: user_path do |f| %>
+  <p>
+    Add a topic <br />
+    <%= f.text_area :topics %>
+  </p>
+  <p>
+    Add or Update phone number<br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    Update your email<br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+  <p class="button"><%= f.submit "Update Information"%></p>
+<% end %>

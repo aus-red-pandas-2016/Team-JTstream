@@ -32,6 +32,7 @@ gem 'simplecov'
 gem 'factory_girl'
 gem 'rails-controller-testing'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,6 +41,8 @@ group :development, :test do
 
   gem 'database_cleaner'
   gem 'byebug', platform: :mri
+  gem 'database_cleaner'
+  gem 'irbtools', require: 'irbtools/binding'
 end
 
 group :development do
