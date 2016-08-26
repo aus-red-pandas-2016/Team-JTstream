@@ -21,9 +21,21 @@ class AppointmentsController < ApplicationController
 
   def index
     @appointments = Appointment.where(active: true)
-    @dates = @appointments.map{|appointment| appointment.datetime.to_date}.uniq
+    @dates = @appointments.map{|appointment| appointment.datetime.to_date}.uniq.sort
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+    @mentor = User.find(params[:user_id])
+  end
 
+  def update
+
+    @appointment = Appointment.find(params[:id])
+    @appointment.context = params[:context]
+    @appointment.active = false
+    @appointment.save 
+    redirect_to show_appointments_path
+  end
 
 end
