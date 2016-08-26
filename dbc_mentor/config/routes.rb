@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/appointments' => 'appointments#index', as: 'show_appointments'
-  resources :feedbacks, only: [:new, :create]
+  resources :feedbacks, only: [:new, :create, :destroy]
   resources :users do
     resources :appointments
   end
