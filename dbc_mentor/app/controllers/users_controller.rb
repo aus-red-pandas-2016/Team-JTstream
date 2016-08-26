@@ -39,7 +39,6 @@ class UsersController < ApplicationController
 	end
 
 	def update
-
 		@user = User.find(session[:id])
 		user_type = params.keys[3]
 		if @user.update_attributes(params.require(user_type).permit(:topics, :phone, :email))
