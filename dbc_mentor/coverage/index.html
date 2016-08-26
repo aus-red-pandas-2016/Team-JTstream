@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-25T22:55:25-05:00">2016-08-25T22:55:25-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-26T00:28:02-05:00">2016-08-26T00:28:02-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">87.6%</span></span>
+    (<span class="covered_percent"><span class="yellow">88.19%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>8</b> files in total.
-    <b>121</b> relevant lines. 
-    <span class="green"><b>106</b> lines covered</span> and
+    <b>127</b> relevant lines. 
+    <span class="green"><b>112</b> lines covered</span> and
     <span class="red"><b>15</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#eef79cb9de116d924767e6f107ac5ba20f3a0ea7" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
         <td class="red strong">57.58 %</td>
-        <td>55</td>
+        <td>54</td>
         <td>33</td>
         <td>19</td>
         <td>14</td>
@@ -113,7 +113,7 @@
       <tr>
         <td class="strong"><a href="#443b6b986c5119991a7ea248e13b0714b379e381" class="src_link" title="spec/controllers/users_controller_spec.rb">spec/controllers/users_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>77</td>
+        <td>78</td>
         <td>45</td>
         <td>45</td>
         <td>0</td>
@@ -123,9 +123,9 @@
       <tr>
         <td class="strong"><a href="#a8a96e483a1ef4c902ef2799323d29e3a886ab12" class="src_link" title="spec/models/users_spec.rb">spec/models/users_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>37</td>
-        <td>20</td>
-        <td>20</td>
+        <td>47</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
         <td>1.5</td>
       </tr>
@@ -634,85 +634,79 @@
           <code class="ruby">	def update</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="42">
           
           
           <code class="ruby">		@user = User.find(session[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
           <code class="ruby">		user_type = params.keys[3]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
           <code class="ruby">		if @user.update_attributes(params.require(user_type).permit(:topics, :phone, :email))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="45">
           
           
           <code class="ruby">			flash[:notice] = &quot;Information updated successfully&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
           <code class="ruby">			redirect_to user_path(session[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">		else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
           <code class="ruby">			flash.now[:alert] = &quot;Information did not update. Please try again&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
           <code class="ruby">			render &quot;edit&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">		end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby"></code>
@@ -1327,6 +1321,12 @@
         <li class="never" data-hits="" data-linenumber="77">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
           <code class="ruby">end</code>
         </li>
       
@@ -1339,8 +1339,8 @@
     <h3>spec/models/users_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1366,8 +1366,8 @@
           <code class="ruby">describe &quot;user model&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="4">
+          <span class="hits">6</span>
           
           <code class="ruby">  let(:user) { User.create!(name:&quot;jay&quot;, email:&quot;jay@gmail.com&quot;, password: &quot;1234&quot;, type: &quot;Student&quot;) }</code>
         </li>
@@ -1396,8 +1396,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
           <code class="ruby">  let(:user2) { User.create!(name:&quot;jess&quot;, email:&quot;jess@gmail.com&quot;, password: &quot;1234&quot;, type: &quot;Mentor&quot;) }</code>
         </li>
@@ -1558,13 +1558,73 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;can edit a student user&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user.update_attributes(email: &quot;jay@me.com&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(user.email).to eq &quot;jay@me.com&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;can edit a mentor user&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user2.update_attributes(email: &quot;jess@me.com&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(user2.email).to eq &quot;jess@me.com&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
