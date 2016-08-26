@@ -1,4 +1,4 @@
-# DBC U-Soon                                                                                          
+# DBC U Soon                                                                                          
 
 ![Coverage Status](http://img.shields.io/coveralls/haml/haml.svg)
 
