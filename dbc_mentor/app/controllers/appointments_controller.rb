@@ -29,14 +29,34 @@ class AppointmentsController < ApplicationController
     @mentor = User.find(params[:user_id])
   end
 
-  def update
+  def edit
+    @appointment = Appointment.find(params[:id])
+    @mentor = @appointment.user
 
+  end
+
+  def update
+    binding.pry
     @appointment = Appointment.find(params[:id])
     @appointment.context = params[:context]
-    @appointment.active = false
     @appointment.student_id = session[:id]
+    if params[:cancel]
+      @appointment.student_id = nil
+      @appointment.active = true
+    else
+      @appointment.active = false
+    end
     @appointment.save
     redirect_to show_appointments_path
+
+  end
+
+  def destroy
+
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to user_path(session[:id])
+
   end
 
 end
