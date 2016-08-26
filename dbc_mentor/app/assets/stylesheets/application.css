@@ -29,6 +29,14 @@ body{
   display: table-cell;
 }
 
+#logo {
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 5px;
+  font-family: 'Ubuntu';
+}
+
 .nav {
   margin: 5px;
 }
@@ -39,7 +47,6 @@ body{
 }
 
 #nav-user {
-  /*float: right;*/
   margin: 0px 5px 5px 5px;
 }
 
