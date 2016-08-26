@@ -4,7 +4,7 @@ describe "Feedback" do
   let!(:mentor) { User.create!(name: "Jess", email: "bohn@goggle.com", password: "password", type: "Mentor") }
   let!(:student) { User.create!(name: "Kimberly", email: "kim@kim.com", password: "password", type: "Student") }
   let!(:feedback) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "student", content: "That session was awesome", rating: 4) }
-  let!(:feedback2) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4) }
+  let!(:feedback2) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awful", rating: 1) }
 
   it "has a student id" do
     expect(feedback.student_id).to eq student.id
