@@ -27,7 +27,7 @@
             <% else %>
             -   <%= apt.user.name %>:  
             <% end %> 
-            <%= apt.user.topics %> <br>
+            <%= apt.user.topics %>     <%= link_to "sign up", user_appointment_path(user_id: apt.user_id, id: apt.id) %><br>
           <% end %>
         <% end %> <br>
 

@@ -1,0 +1,13 @@
+<h2>Appointment</h2>
+<h3><%= @appointment.datetime.strftime('%m-%d-%y %H:%M') %></h3>
+<h4><%= @mentor.name %></h4>
+topics: <%= @mentor.topics %><br>
+email: <%= @mentor.email %><br>
+phone: <%= @mentor.phone %><br>
+
+<%= form_tag "/users/#{@mentor.id}/appointments/#{@appointment.id}", method: 'patch' do %>
+  <%= label_tag :context %>
+  <%= text_area_tag :context,nil, placeholder: 'Provide some context for your mentor. What would you like to work on?', size: '35x10' %><br><br>
+  <%= submit_tag "Sign up" %>
+ <% end %>
+ 
