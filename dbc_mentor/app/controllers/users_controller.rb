@@ -5,11 +5,10 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@user = User.find(session[:id])
+		@users = User.all
 	end
 
 	def create
-    # binding.pry
 		password = params[:user][:password]
 		password_confirm = params[:user][:password_confirmation]
 		if password != password_confirm
@@ -28,6 +27,26 @@ class UsersController < ApplicationController
       session[:id] = @user.id
 			flash[:notice] = "User was successfully created."
 			redirect_to root_path
+		end
+	end
+
+	def show
+		@user = User.find(session[:id])
+	end
+
+	def edit
+		@user = User.find(session[:id])
+	end
+
+	def update
+		@user = User.find(session[:id])
+		user_type = params.keys[3]
+		if @user.update_attributes(params.require(user_type).permit(:topics, :phone, :email))
+			flash[:notice] = "Information updated successfully"
+			redirect_to user_path(session[:id])
+		else
+			flash.now[:alert] = "Information did not update. Please try again"
+			render "edit"
 		end
 	end
 

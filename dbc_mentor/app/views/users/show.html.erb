@@ -1,0 +1,11 @@
+<div>
+<h2>Profile for <%= @user.name %></h2>
+  <h5><%= @user.type %></h5>
+  <p><%= link_to "click to edit your info", edit_user_path(@user.id)  %></p>
+  <h3>Your Versed Topics:</h3>
+  <% if @user.topics %>
+    <li><%= @user.topics %></li>
+  <% else %>
+    <p>You Do Not Have Any Topics Assigned</p>
+  <% end %>
+</div>
