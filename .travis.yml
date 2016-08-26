@@ -4,6 +4,9 @@ rvm:
 - jruby
 - rbx-2
 
+install:
+- bundle install --path vendor/bundle
+
 script:
 - bundle exec rake build
 
