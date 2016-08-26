@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
   belongs_to :user
 
-  validates :datetime, :student_id, :mentor_id, presence: true
+  validates :datetime, :user_id, :active, presence: true
 end

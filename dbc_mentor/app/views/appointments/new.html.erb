@@ -1,0 +1,10 @@
+<h2>Create Appointment</h2>
+<%= form_tag controller: 'appointments', action: 'create', method: 'post' do %>
+  <%= label_tag :date %>
+  <%= text_field_tag :date %>
+
+  <%= label_tag :time %>
+  <%= text_field_tag :time %>
+
+  <%= submit_tag "Create Appointment" %>
+<% end %>
