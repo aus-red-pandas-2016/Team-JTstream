@@ -36,7 +36,6 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    binding.pry
     @appointment = Appointment.find(params[:id])
     @appointment.context = params[:context]
     @appointment.student_id = session[:id]
