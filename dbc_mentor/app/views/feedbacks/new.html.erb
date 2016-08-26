@@ -15,32 +15,16 @@
   <p>
 
     <p>
-      Are you registering as a student or a mentor?<br />
-      <%= select_tag(:type, options_for_select([[''], ['Student'], ['Mentor']])) %>
+      Are you the student or mentor?<br />
+      <%= select_tag(:written_by, options_for_select([[''], ['Student'], ['Mentor']])) %>
     </p>
     <p>
-      If you are registering as a mentor, please enter your provided access code<br />
-      <input type="text" name="mentor_code"> <%= flash[:alert_mentor] %>
+      <%= f.label :rating %> (1-5)<br />
+      <%= f.text_field :rating %>
     </p>
     <p>
-      What topics are you well versed in? (optional)<br />
-      <%= f.text_area :topics %>
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
     </p>
-    <p>
-      <%= f.label :phone_number %> (optional)<br />
-      <%= f.text_field :phone %>
-    </p>
-    <p>
-      Provide an email which will be used for Login and contact<br />
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %><%= flash[:alert_password] %>
-    </p>
-  <p class="button"><%= f.submit "Finalize Registration"%></p>
+  <p class="button"><%= f.submit "Submit Feedback"%></p>
 <% end %>
