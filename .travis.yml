@@ -1,11 +1,13 @@
 language: ruby
+
+os: osx
+
 rvm:
 - 2.2
 - jruby
 - rbx-2
 
-install:
-- bundle install --path vendor/bundle
+install: bundle install
 
 script:
 - bundle exec rake build
