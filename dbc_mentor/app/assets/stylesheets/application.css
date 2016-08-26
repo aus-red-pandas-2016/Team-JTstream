@@ -54,3 +54,15 @@ body{
 .phone {
   display: inline-block;
 }
+
+.columns {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 500px;
+  overflow: scroll;
+}
+
+.columns h3 {
+  font-size: 2em;
+}
