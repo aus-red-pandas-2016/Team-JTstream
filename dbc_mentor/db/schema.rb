@@ -25,16 +25,19 @@ ActiveRecord::Schema.define(version: 20160826032927) do
     t.boolean  "active"
   end
 
+  create_table "mentors", force: :cascade do |t|
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "phone"
     t.string   "type"
     t.integer  "type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "phone"
   end
 
 end

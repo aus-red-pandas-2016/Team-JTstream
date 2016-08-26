@@ -20,7 +20,8 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.find_by(active: true)
+    @appointments = Appointment.where(active: true)
+    @dates = @appointments.map{|appointment| appointment.datetime.to_date}.uniq
   end
 
 
