@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/appointments' => 'appointments#index', as: 'show_appointments'
-
+  resources :feedbacks, only: [:new, :create]
   resources :users do
     resources :appointments
   end
@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   root :to => "appointments#index"
   resources :sessions
+
 end
