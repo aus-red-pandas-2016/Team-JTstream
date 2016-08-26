@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/controllers/appointments_controller.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/appointments_controller.rb": [
         1,
         1,
         null,
@@ -34,17 +34,37 @@
         null,
         null,
         1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
         null,
         0,
         0,
         0,
-        0,
-        0,
+        null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/controllers/application_controller.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/application_controller.rb": [
         1,
         null,
         1,
@@ -58,7 +78,7 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/spec/controllers/feedbacks_controller_spec.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/controllers/feedbacks_controller_spec.rb": [
         1,
         null,
         1,
@@ -146,10 +166,12 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/controllers/feedbacks_controller.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/feedbacks_controller.rb": [
         1,
         null,
         1,
+        null,
+        3,
         3,
         null,
         null,
@@ -165,9 +187,15 @@
         null,
         null,
         null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -207,7 +235,7 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -229,7 +257,7 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/spec/controllers/users_controller_spec.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -309,7 +337,7 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/controllers/users_controller.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -365,21 +393,140 @@
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/user.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/models/appointments_spec.rb": [
+        1,
+        null,
+        1,
+        5,
+        5,
+        5,
+        null,
+        5,
+        null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         1,
         1,
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/student.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/models/feedback_spec.rb": [
+        1,
+        null,
+        1,
+        8,
+        8,
+        8,
+        8,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Team-JTstream/dbc_mentor/spec/models/users_spec.rb": [
+        1,
+        null,
+        1,
+        6,
+        1,
+        1,
+        6,
+        null,
+        2,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/student.rb": [
         1,
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/appointment.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/appointment.rb": [
         1,
         1,
         null,
@@ -387,23 +534,23 @@
         1,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/mentor.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/mentor.rb": [
         1,
         null,
         null,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/feedback.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/feedback.rb": [
         1,
         1,
         null
       ],
-      "/Users/apprentice/client-project/Team-JTstream/dbc_mentor/app/models/application_record.rb": [
+      "/Users/apprentice/Team-JTstream/dbc_mentor/app/models/application_record.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1472238958
+    "timestamp": 1472245614
   }
 }

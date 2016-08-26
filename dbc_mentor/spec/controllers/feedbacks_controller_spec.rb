@@ -29,12 +29,12 @@ describe FeedbacksController do
   describe "POST #create" do
     context "when valid params are entered" do
       it "responds with status code of 302" do
-        post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } }
+        post :create, { feedback: {content: "That session was awesome", rating: 4 },  mentor_id: mentor.id, student_id: student.id, written_by: "mentor", appointment_id: 2 }
         expect(response).to have_http_status 302
       end
 
       it "creates a new feedback in the database" do
-        expect{ post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } } }.to change(Feedback,:count).by(1)
+        expect{ post :create, { feedback: {content: "That session was awesome", rating: 4 },  mentor_id: mentor.id, student_id: student.id, written_by: "mentor", appointment_id: 2 } }.to change(Feedback,:count).by(1)
       end
 
       it "checks the current_user and sets them to the appropriate id type" do
@@ -42,17 +42,17 @@ describe FeedbacksController do
       end
 
       it "assigns the newly created feedback as @feedback" do
-        post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } }
+        post :create, { feedback: {content: "That session was awesome", rating: 4 },  mentor_id: mentor.id, student_id: student.id, written_by: "mentor", appointment_id: 2 }
         expect(assigns(:feedback)).to eq Feedback.last
       end
 
       it "sets a notice that the feedback was successfully created/submitted" do
-        post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } }
+        post :create, { feedback: {content: "That session was awesome", rating: 4 },  mentor_id: mentor.id, student_id: student.id, written_by: "mentor", appointment_id: 2 }
         expect(flash[:notice]).to eq('Feedback successfully submitted!')
       end
 
       it "redirects to the homepage" do
-        post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } }
+        post :create, { feedback: {content: "That session was awesome", rating: 4 },  mentor_id: mentor.id, student_id: student.id, written_by: "mentor", appointment_id: 2 }
         expect(response).to redirect_to root_path
       end
     end
