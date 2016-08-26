@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+- 2.2
+- jruby
+- rbx-2
+
+script:
+- bundle exec rake build
+
+notifications:
+ slack: dbc-atx:QRGX6328W7YbJVBhpTHRZm7i

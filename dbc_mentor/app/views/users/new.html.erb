@@ -14,7 +14,8 @@
 
 	<p>
 	<input name="authenticity_token" type="hidden" value="token_value">
-	    <%= f.label :name %><br />
+
+	    <%= f.label :name %>
 	    <%= f.text_field :name, :required => true%>
   	</p>
 
@@ -31,7 +32,7 @@
 	    <%= f.text_area :topics %>
   	</p>
   	<p>
-	    <%= f.label :phone_number %> (optional)<br />
+	    <%= f.label :phone_number, class: 'phone' %> <span class='optional'>(optional)</span><br>
 	    <%= f.text_field :phone %>
   	</p>
   	<p>
@@ -39,12 +40,12 @@
 	    <%= f.text_field :email, :required => true %>
   	</p>
   	<p>
-	    <%= f.label :password %><br />
+	    <%= f.label :password %>
 	    <%= f.password_field :password, :required => true %>
   	</p>
   	<p>
 	    <%= f.label :password_confirmation %><br />
 	    <%= f.password_field :password_confirmation, :required => true %><%= flash[:alert_password] %>
   	</p>
- 	<p class="button"><%= f.submit "Finalize Registration"%></p>
+ 	<%= f.submit "Finalize Registration", class: 'button-primary'%>
 <% end %>

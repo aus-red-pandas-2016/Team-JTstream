@@ -49,7 +49,7 @@ describe UsersController do
 
       it "redirects to the home page" do
         post :create, { type: "Student", user: {name: "Tom Ho", email: "tom@tom.com", password: "password", password_confirmation: "password"} }
-        expect(response).to redirect_to "/"
+        expect(response).to redirect_to show_appointments_path
       end
     end
 

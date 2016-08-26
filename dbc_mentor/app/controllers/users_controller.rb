@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 			@user = User.create!(name: params[:user][:name], email: params[:user][:email], password: password, phone: params[:user][:phone], type: params[:type], topics: params[:user][:topics])
       session[:id] = @user.id
 			flash[:notice] = "User was successfully created."
-			redirect_to root_path
+			redirect_to show_appointments_path
 		end
 	end
 

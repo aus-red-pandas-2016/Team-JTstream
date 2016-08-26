@@ -8,6 +8,6 @@ phone: <%= @mentor.phone %><br>
 <%= form_tag "/users/#{@mentor.id}/appointments/#{@appointment.id}", method: 'patch' do %>
   <%= label_tag :context %>
   <%= text_area_tag :context,nil, placeholder: 'Provide some context for your mentor. What would you like to work on?', size: '35x10' %><br><br>
-  <%= submit_tag "Sign up" %>
+  <%= submit_tag "Sign up", class: 'button-primary' %>
  <% end %>
- 
+

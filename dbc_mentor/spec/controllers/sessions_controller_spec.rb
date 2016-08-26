@@ -33,6 +33,6 @@ describe SessionsController do
       post :destroy
       expect(session[:id]).to eq nil
       expect(flash[:notice]).to eq("Logged out!")
-      expect(response).to redirect_to root_url
+      expect(response).to redirect_to show_appointments_path
     end
 end

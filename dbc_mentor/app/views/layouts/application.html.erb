@@ -6,27 +6,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css' %>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
   </head>
 
   <body>
-      <div id="user_nav">
-        <%= link_to "Home", root_path %>
+      <div id="user_nav" class='u-full-width'>
+        <%= link_to "Home", show_appointments_path, id: 'nav-home' %>
         <% if current_user %>
-          Logged in as <%= current_user.email %>.
-          <%= link_to "Log Out", log_out_path %>
+          <%= link_to "Logout", log_out_path, id: 'nav-logout' %>
+          <%= link_to current_user.name, user_path(session[:id]), id: 'nav-user' %>
         <% else %>
-          <%= link_to "Register", new_user_path %>
-          <%= link_to "Log In", log_in_path %>
-        <% end %>
-        <% if current_user %>
-          <%= link_to "Click To View Your Profile", user_path(session[:id]) %>
+          <%= link_to "Register", new_user_path, class: 'nav' %>
+          <%= link_to "Log In", log_in_path, class: 'nav' %>
         <% end %>
       </div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-
-    <%= yield %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <div id="logo">
+        <h1> DBC U SOON </h1>
+      </div> <br>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
