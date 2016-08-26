@@ -1,7 +1,7 @@
 # DBC Mentor App                                                                                          
 
 ![Coverage Status](http://img.shields.io/coveralls/haml/haml.svg)
-
+[![Build Status](https://travis-ci.org/aus-red-pandas-2016/Team-JTstream.svg?branch=master)](https://travis-ci.org/aus-red-pandas-2016/Team-JTstream)
 ## Team-JTstream
 
 ### Team Members
