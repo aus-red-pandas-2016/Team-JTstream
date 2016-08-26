@@ -34,7 +34,11 @@ describe FeedbacksController do
       end
 
       it "creates a new feedback in the database" do
-        expect{ post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } } }.to change(User,:count).by(1)
+        expect{ post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4 } } }.to change(Feedback,:count).by(1)
+      end
+
+      it "checks the current_user and sets them to the appropriate id type" do
+
       end
 
       it "assigns the newly created feedback as @feedback" do
@@ -71,6 +75,11 @@ describe FeedbacksController do
       it "renders the :new template" do
         post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", rating: 2 } }
         expect(response).to render_template(:new)
+      end
+
+      it "has the errors on the page" do
+        post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", rating: 2 } }
+        expect(flash[:alert]).to eq("All fields must be filled out")
       end
     end
   end
