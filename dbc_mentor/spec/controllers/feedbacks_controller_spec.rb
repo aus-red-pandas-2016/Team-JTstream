@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe "Feedbacks Controller" do
+describe FeedbacksController do
   let!(:mentor) { User.create!(name: "Jess", email: "bohn@goggle.com", password: "password", type: "Mentor") }
   let!(:student) { User.create!(name: "Kimberly", email: "kim@kim.com", password: "password", type: "Student") }
-  gitlet!(:feedback) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "student", content: "That session was awesome", rating: 4) }
+  let!(:feedback) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "student", content: "That session was awesome", rating: 4) }
   let!(:feedback2) { Feedback.create!(mentor_id: mentor.id, student_id: student.id, written_by: "mentor", content: "That session was awesome", rating: 4) }
   before(:each) do
     session[:id] = mentor.id
@@ -63,7 +63,7 @@ describe "Feedbacks Controller" do
         expect{ post :create, { feedback: { mentor_id: mentor.id, written_by: "mentor", rating: 2 } } }.to_not change(Feedback,:count)
       end
 
-      it "assigns the unsaved feedback as @feedback"
+      it "assigns the unsaved feedback as @feedback" do
         post :create, { feedback: { mentor_id: mentor.id, student_id: student.id, written_by: "mentor", rating: 2 } }
         expect(assigns(:feedback)).to be_a_new Feedback
       end

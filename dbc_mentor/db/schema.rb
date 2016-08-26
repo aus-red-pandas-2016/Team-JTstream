@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160826032225) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "type"
-    t.integer  "type_id"
     t.string   "topics"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
