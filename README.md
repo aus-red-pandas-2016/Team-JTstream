@@ -1,4 +1,4 @@
-# DBC Mentor App                                    https://travis-ci.org/aus-red-pandas-2016/Team-JTstream.svg?branch=master                                                                                          
+# DBC Mentor App                                                                                          
 
 ## Team-JTstream
 
