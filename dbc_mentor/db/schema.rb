@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20160826032927) do
     t.boolean  "active"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "student_id"
+    t.integer  "appointment_id"
+    t.string   "written_by"
+    t.text     "content"
+    t.integer  "rating"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "mentors", force: :cascade do |t|
   end
 

@@ -1,0 +1,30 @@
+<h3>Give feedback on your study session!</h3>
+
+<%= form_for @feedback do |f| %>
+  <% if @feedback.errors.any? %>
+      <div class="error_messages">
+        <h2>Feedback form is invalid</h2>
+        <ul>
+          <% for message in @feedback.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <p>
+
+    <p>
+      Are you the student or mentor?<br />
+      <%= select_tag(:written_by, options_for_select([[''], ['Student'], ['Mentor']])) %>
+    </p>
+    <p>
+      <%= f.label :rating %> (1-5)<br />
+      <%= f.text_field :rating %>
+    </p>
+    <p>
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </p>
+  <p class="button"><%= f.submit "Submit Feedback"%></p>
+<% end %>

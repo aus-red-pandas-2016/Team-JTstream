@@ -8,4 +8,36 @@
   <% else %>
     <p>You Do Not Have Any Topics Assigned</p>
   <% end %>
-</div>
+</div><br>
+
+
+<% if @user.type == "Student" %>
+  <h3>Your Appointments</h3>
+
+  <% Appointment.where(student_id: @user.id).each do |appointment| %>
+    Mentor: <%= appointment.user.name %><br>
+    Contact Info: <%= appointment.user.email %><br>
+    Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
+    Appointment Context: <br>
+    <%= appointment.context %><br>
+    <%= link_to "Edit Appointment",  edit_user_appointment_path(user_id: appointment.user_id, id: appointment.id)%><br><br>
+  <% end %>
+
+<% end %>
+
+<h3>Your Mentoring Sessions</h3>
+  <%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get%><br>
+  <% Appointment.where(user_id: @user.id).each do |appointment| %>
+    <% if appointment.student_id %>
+      Student: <%= User.find(appointment.student_id).name %><br>
+      Contact Info: <%= User.find(appointment.student_id).email %><br>
+    <% else %>
+      Student: No student signed up yet<br>
+    <% end %>
+    Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
+    Appointment Context: <br>
+    <%= appointment.context %><br>
+    <%=  link_to "Cancel Appointment", "/users/#{appointment.user_id}/appointments/#{appointment.id}", method: "delete", confirm: "Are you sure?" %><br><br>
+  <% end %>
+
+<h3>Feedback</h3>
