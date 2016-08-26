@@ -8,4 +8,32 @@
   <% else %>
     <p>You Do Not Have Any Topics Assigned</p>
   <% end %>
-</div>
+</div><br>
+<%= button_to "Add Availability", new_user_appointment_path(user_id: session[:id]), method: :get%>
+
+<% if @user.type == "Student" %>
+  <h3>Your Appointments</h3>
+
+  <% Appointment.where(student_id: @user.id).each do |appointment| %>
+    Mentor: <%= appointment.user.name %><br>
+    Contact Info: <%= appointment.user.email %><br>
+    Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
+    Appointment Context: <br>
+    <%= appointment.context %>
+    <%= link_to "Edit Appointment",  user_appointment_path(user_id: appointment.user_id, id: appointment.id)%>
+  <% end %>
+
+<% end %>
+
+<h3>Your Mentoring Sessions</h3>
+
+  <% Appointment.where(user_id: @user.id).each do |appointment| %>
+    Student: <%= User.find(appointment.student_id).name %><br>
+    Contact Info: <%= User.find(appointment.student_id).email %><br>
+    Time: <%= appointment.datetime.strftime("%m-%d-%y %H:%M") %><br><br>
+    Appointment Context: <br>
+    <%= appointment.context %>
+
+  <% end %>
+
+<h3>Feedback</h3>
