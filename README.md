@@ -1,6 +1,6 @@
 # DBC Mentor App                                                                                          
 
-[![Coverage Status](http://img.shields.io/coveralls/haml/haml.svg)]
+![Coverage Status](http://img.shields.io/coveralls/haml/haml.svg)
 
 ## Team-JTstream
 
